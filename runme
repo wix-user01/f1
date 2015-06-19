@@ -1,0 +1,8 @@
+PWD=`pwd`
+
+[ ! -d $PWD/node_modules ] && ~/.nvm/v0.10.38/bin/npm install
+[ ! -d $PWD/bower_components ] && ~/.nvm/v0.10.38/bin/bower install
+[ ! -L $PWD/app/bower_components ] && ln -s $PWD/bower_components $PWD/app/bower_components
+[ ! -L $PWD/bower_components ] && ln -s $PWD/app/bower_components $PWD/bower_components
+
+~/.nvm/v0.10.38/bin/node $PWD/server.js
